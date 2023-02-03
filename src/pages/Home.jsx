@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import FilterByCategory from '../components/Home/FilterByCategory';
 import ProductCard from '../components/Home/ProductCard';
 
 
@@ -22,11 +23,10 @@ const Home = () => {
         setProductsFilter(filter)
     }
 
-    console.log(productsFilter)
-
     return (
         <div>
             <input onChange={handleChange} type="text" />
+            <FilterByCategory />
             <div className='productos-container'>
                 {
                     productsFilter?.map(product => (
