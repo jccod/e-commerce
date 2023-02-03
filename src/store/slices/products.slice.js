@@ -19,3 +19,10 @@ export const getAllProducts = () => (dispatch) => {
         .then(res => dispatch(setProductosGlobal(res.data.data.products)))
         .catch(error => console.log(error))
 }
+
+export const getProductsById = (id) => (dispatch) => {
+    const URL = `https://e-commerce-api.academlo.tech/api/v1/products?category=${id}`
+    axios.get(URL)
+        .then(res => dispatch(setProductosGlobal(res.data)))
+        .catch(error => console.log(error))
+}
