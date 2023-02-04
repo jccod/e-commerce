@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/Home/ProductCard';
 import ProductDescription from '../components/ProductInfo/ProductDescription';
+import SliderImg from '../components/ProductInfo/SliderImg';
 
 const ProductInfo = () => {
 
@@ -28,10 +29,9 @@ const ProductInfo = () => {
         }
     }, [allProducts, product])
 
-    console.log(similarProducts)
-
     return (
         <div>
+            <SliderImg listImgs={product?.productImgs} />
             <ProductDescription
                 product={product}
             />
