@@ -46,7 +46,7 @@ const Home = () => {
                             />
                         ))
                     :
-                    <h1>There are no products in this price range</h1>
+                    <h1>There are no products with this criteria</h1>
                 }
 
             </div>

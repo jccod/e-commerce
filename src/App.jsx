@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import { getUserCart } from './store/slices/cart.slice'
 import Header from './components/shared/Header'
 import Cart from './pages/Cart'
+import Purchases from './pages/Purchases'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/product/:id' element={<ProductInfo />} />
+        <Route path='/purchases' element={<Purchases />} />
       </Routes>
     </div>
   )
