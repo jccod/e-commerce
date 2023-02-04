@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import FilterByCategory from '../components/Home/FilterByCategory';
 import FilterPrice from '../components/Home/FilterPrice';
 import ProductCard from '../components/Home/ProductCard';
+import ToOrderProducts from '../components/Home/ToOrderProducts';
 
 
 
@@ -36,6 +37,7 @@ const Home = () => {
             <input onChange={handleChange} type="text" />
             <FilterPrice  setInputPrice={setInputPrice}/>
             <FilterByCategory />
+            <ToOrderProducts />
             <div className='productos-container'>
                 {
                     productsFilter?.filter(filterCallBack).length !==0 ?

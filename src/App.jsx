@@ -6,11 +6,11 @@ import Home from './pages/Home'
 import ProductInfo from './pages/ProductInfo'
 import { getAllProducts } from './store/slices/products.slice'
 import Login from './pages/Login'
-import { getUserCart } from './store/slices/cart.slice'
 import Header from './components/shared/Header'
 import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
 import ProtectedRoutes from './components/shared/ProtectedRoutes'
+import Footer from './components/shared/Footer'
 
 
 function App() {
@@ -18,8 +18,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getAllProducts())
-    dispatch(getUserCart())
+    dispatch(getAllProducts())    
   }, [])
 
   return (
@@ -34,6 +33,7 @@ function App() {
           <Route path='/purchases' element={<Purchases />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   )
 }

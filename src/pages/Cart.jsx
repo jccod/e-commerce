@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CartProduct from '../components/Cart/CartProduct';
 import { getUserCart } from '../store/slices/cart.slice';
@@ -10,6 +10,10 @@ const Cart = () => {
     const dispatch = useDispatch()
 
     const cartProducts = useSelector(state => state.cart)
+
+    useEffect(() => {
+        dispatch(getUserCart())
+    }, [])
 
     const handleCheckout = () => {
         const URL = 'https://e-commerce-api.academlo.tech/api/v1/purchases'

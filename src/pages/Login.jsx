@@ -15,7 +15,7 @@ const Login = () => {
         const URL = 'https://e-commerce-api.academlo.tech/api/v1/users/login'
         axios.post(URL, data)
             .then(res => {
-                console.log(res.data.data.token)
+                //console.log(res.data.data.token)
                 localStorage.setItem('token', res.data.data.token)
                 setIsLogged(true)
                 navigate('/')

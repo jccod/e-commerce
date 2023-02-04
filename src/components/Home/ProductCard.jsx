@@ -26,7 +26,7 @@ const ProductCard = ({product}) => {
 
         axios.post(URL, data, getConfig())
             .then(res => {
-                console.log(res.data)
+                //console.log(res.data)
                 dispatch(getUserCart())
             })
             .catch(error => console.log(error))
