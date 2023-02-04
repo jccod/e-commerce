@@ -10,6 +10,7 @@ import { getUserCart } from './store/slices/cart.slice'
 import Header from './components/shared/Header'
 import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
+import ProtectedRoutes from './components/shared/ProtectedRoutes'
 
 
 function App() {
@@ -23,13 +24,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/login' element={<Login/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/product/:id' element={<ProductInfo />} />
-        <Route path='/purchases' element={<Purchases />} />
+        <Route element ={<ProtectedRoutes />}>
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/purchases' element={<Purchases />} />
+        </Route>
       </Routes>
     </div>
   )

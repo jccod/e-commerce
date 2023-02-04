@@ -5,7 +5,8 @@ const productsSlice = createSlice({
     name: 'products',
     initialState: null,
     reducers: {
-        setProductosGlobal: (state, action) => action.payload
+        setProductosGlobal: (state, action) => action.payload,
+        
     }
 })
 
