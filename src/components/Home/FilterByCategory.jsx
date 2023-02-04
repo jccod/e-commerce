@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductsByCategory } from '../../store/slices/products.slice';
+import { getAllProducts, getProductsByCategory } from '../../store/slices/products.slice';
 
 
 const FilterByCategory = () => {
@@ -26,17 +26,16 @@ const FilterByCategory = () => {
     }, [])
 
     const dispatch = useDispatch()
-/*
-    const handleClick = (id) => {
-        dispatch(getProductsByCategory(id))
-        console.log(cat)
-    }*/
+
+    const handleAllProducts = () => {
+        dispatch(getAllProducts())
+    }
 
     return (
         <section>
             <h3>Categories</h3>
             <ul>
-                <li>All Products</li>
+                <li onClick={handleAllProducts}>All Products</li>
                 {
                     categories?.map(category => (
                         <li onClick={() => dispatch(getProductsByCategory(category.id))} key={category.id}>{category.name}</li>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import FilterByCategory from '../components/Home/FilterByCategory';
+import FilterPrice from '../components/Home/FilterPrice';
 import ProductCard from '../components/Home/ProductCard';
 
 
@@ -8,6 +9,10 @@ import ProductCard from '../components/Home/ProductCard';
 const Home = () => {
 
     const [productsFilter, setProductsFilter] = useState()
+    const [inputPrice, setInputPrice] = useState({
+        from: 0,
+        to: Infinity
+    })
 
     const products = useSelector(state => state.products)
 
@@ -23,18 +28,25 @@ const Home = () => {
         setProductsFilter(filter)
     }
 
+    const filterCallBack = prod => +prod.price >= inputPrice.from && +prod.price <= inputPrice.to
+
+
     return (
         <div>
             <input onChange={handleChange} type="text" />
+            <FilterPrice  setInputPrice={setInputPrice}/>
             <FilterByCategory />
             <div className='productos-container'>
                 {
-                    productsFilter?.map(product => (
-                        <ProductCard
-                            key={product.id}
-                            product={product}
-                        />
-                    ))
+                    productsFilter?.filter(filterCallBack).length !==0 ?
+                        productsFilter?.filter(filterCallBack).map(product => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))
+                    :
+                    <h1>There are no products in this price range</h1>
                 }
 
             </div>
