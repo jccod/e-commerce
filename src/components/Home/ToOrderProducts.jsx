@@ -16,7 +16,7 @@ const ToOrderProducts = () => {
 
     return (
         <div>
-            <h4 className='filter-title'>Order by Price</h4>
+            <h4 className='filter-title'>Sort by Price</h4>
             <button className='primary-btn' onClick={handleAscending}>Ascending Order</button>
             <button className='primary-btn' onClick={handleDescending}>Descending Order</button>
         </div>
