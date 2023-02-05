@@ -1,5 +1,40 @@
 .cart-product {
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid red;
+    position: relative;
+    width: 350PX;
+    padding: 2rem 1rem;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 5px auto;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.bx-trash {
+    font-size: 1.2rem;
+    color: var(--btn-primary-color);
+}
+
+.quantity-container {
+    display: flex;
+}
+
+.quantity-control {
+    border: 1px lightgray solid;
+    padding: 0 0.5rem;
+}
+
+.total-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.product-price {
+    font-weight: 700;
 }

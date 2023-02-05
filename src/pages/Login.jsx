@@ -40,26 +40,29 @@ const Login = () => {
 
     if(isLogged) {
         return (
-            <div>
-                <h1>User Logged</h1>
-                <button onClick={handleLogout}>Logout</button>
+            <div className='logout'>
+                <div className='logout__btn-container'>
+                    <h2>You are Logged</h2>
+                    <button className='logout__btn' onClick={handleLogout}>Log out</button>
+                </div>
             </div>
         )
 
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(submit)}>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" {...register("email")}/>
+        <div className='login'>
+            <form className='login-form' onSubmit={handleSubmit(submit)}>
+                <h2 className='login-form__title'>Welcome! Enter your email and password online</h2>
+                <div className='login-form__input-container'>
+                    <label className='login-form__label' htmlFor="email">Email</label>
+                    <input className='login-form__input' type="text" id="email" {...register("email")}/>
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" {...register("password")}/>
+                    <label className='login-form__label' htmlFor="password">Password</label>
+                    <input className='login-form__input' type="password" id="password" {...register("password")}/>
                 </div>
-                <button>Login</button>
+                <button className='primary-btn--login'>Login</button>
             </form>
         </div>
     );

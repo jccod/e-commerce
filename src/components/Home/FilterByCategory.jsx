@@ -33,12 +33,12 @@ const FilterByCategory = () => {
 
     return (
         <section>
-            <h3>Categories</h3>
-            <ul>
-                <li onClick={handleAllProducts}>All Products</li>
+            <h4 className='filter-title'>Filter by Category</h4>
+            <ul className='categories-container'>
+                <li className='category' onClick={handleAllProducts}>All Products</li>
                 {
                     categories?.map(category => (
-                        <li onClick={() => dispatch(getProductsByCategory(category.id))} key={category.id}>{category.name}</li>
+                        <li className='category' onClick={() => dispatch(getProductsByCategory(category.id))} key={category.id}>{category.name}</li>
                     ))
                 }
             </ul>

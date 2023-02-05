@@ -4,6 +4,7 @@ import FilterByCategory from '../components/Home/FilterByCategory';
 import FilterPrice from '../components/Home/FilterPrice';
 import ProductCard from '../components/Home/ProductCard';
 import ToOrderProducts from '../components/Home/ToOrderProducts';
+import '../App.css'
 
 
 
@@ -33,25 +34,28 @@ const Home = () => {
 
 
     return (
-        <div>
-            <input onChange={handleChange} type="text" />
-            <FilterPrice  setInputPrice={setInputPrice}/>
-            <FilterByCategory />
-            <ToOrderProducts />
-            <div className='productos-container'>
-                {
-                    productsFilter?.filter(filterCallBack).length !==0 ?
-                        productsFilter?.filter(filterCallBack).map(product => (
-                            <ProductCard
-                                key={product.id}
-                                product={product}
-                            />
-                        ))
-                    :
-                    <h1>There are no products with this criteria</h1>
-                }
-
-            </div>
+        <div className='home'>
+                <input className='search' onChange={handleChange} type="text" placeholder='Search your favorite product'/>
+                <main className='main-container'>
+                    <div className='filters-container'>
+                        <FilterPrice  setInputPrice={setInputPrice}/>
+                        <FilterByCategory />
+                        <ToOrderProducts />
+                    </div>
+                    <div className='productos-container'>
+                        {
+                            productsFilter?.filter(filterCallBack).length !==0 ?
+                                productsFilter?.filter(filterCallBack).map(product => (
+                                    <ProductCard
+                                        key={product.id}
+                                        product={product}
+                                    />
+                                ))
+                            :
+                            <h1>There are no products with this criteria</h1>
+                        }
+                    </div>
+                </main>
         </div>
     );
 };

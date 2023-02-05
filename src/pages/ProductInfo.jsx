@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import ProductCard from '../components/Home/ProductCard';
 import ProductDescription from '../components/ProductInfo/ProductDescription';
 import SliderImg from '../components/ProductInfo/SliderImg';
+import '../App.css'
 
 const ProductInfo = () => {
 
@@ -30,13 +31,15 @@ const ProductInfo = () => {
     }, [allProducts, product])
 
     return (
-        <div>
-            <SliderImg listImgs={product?.productImgs} />
-            <ProductDescription
-                product={product}
-            />
-            <section>
-                <h2>Discover similar items</h2>
+        <div className='product-info'>
+            <header className='product-info__header'>
+                <SliderImg listImgs={product?.productImgs} />
+                <ProductDescription
+                    product={product}
+                />
+            </header>
+            <section className='similar-products-section'>
+                <h3>Discover similar items</h3>
                 <div className='similar-products-container'>
                     {
                         similarProducts?.map(simProd => {

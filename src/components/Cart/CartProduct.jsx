@@ -23,16 +23,20 @@ const CartProduct = ({product}) => {
     return (
         <article className='cart-product'>
             <header>
-                <h4>{product.brand}</h4>
-                <h3>{product.title}</h3>
+                <h6 className='cart-product__title'>{product.title}</h6>
             </header>
-            <button onClick={handleDelete}>
+            <button className='delete-btn' onClick={handleDelete}>
                 <i className='bx bx-trash' ></i>
             </button>
-            <div>{product.productsInCart.quantity}</div>
-            <div>
+            <div className='quantity-container'>
+                <p className='quantity-control'>-</p>
+                <div className='quantity-control'>{product.productsInCart.quantity}</div>
+                <p className='quantity-control'>+</p>
+            </div>
+            
+            <div className='total-container'>
                 <p>Total: </p>
-                <span>$ {product.price * product.productsInCart.quantity}</span>
+                <span className='product-price'>$ {product.price * product.productsInCart.quantity}</span>
             </div>
         </article>
     );

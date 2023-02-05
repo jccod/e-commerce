@@ -17,8 +17,8 @@ const Purchases = () => {
     console.log(purchasesList)
 
     return (
-        <section>
-            <h2>My Purchases</h2>
+        <section className='purchases-section'>
+            <h2 className='purchases-title'>My Purchases</h2>
             <div className='purchases-container'>
                 {
                     purchasesList?.map(purchase => (

@@ -37,6 +37,7 @@ const ProductCard = ({product}) => {
             <header className='product__header' >
                 <img className='product__img' src={product.productImgs[0]} alt="" />
                 <img className='product__img' src={product.productImgs[1]} alt="" />
+                <button onClick={handleBtnClic} className='product__btn'><i className='bx bxs-cart-add' ></i></button>
             </header>
             <section className='product__body'>
                 <h3 className='product__title'>{product.title}</h3>
@@ -44,7 +45,7 @@ const ProductCard = ({product}) => {
                     <span className='product__price-label'>Price</span>
                     <h4 className='product__price-number'>$ {product.price}</h4>
                 </div>
-                <button onClick={handleBtnClic} className='product__btn'><i className='bx bxs-cart-add' ></i></button>
+    
             </section>
         </article>
     );

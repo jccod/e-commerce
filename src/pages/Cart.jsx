@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CartProduct from '../components/Cart/CartProduct';
 import { getUserCart } from '../store/slices/cart.slice';
 import getConfig from '../utils/getConfig'
+import '../App.css'
 
 const Cart = () => {
 
@@ -36,8 +37,8 @@ const Cart = () => {
     }
 
     return (
-        <section>
-            <h2>Cart</h2>
+        <section className='cart-page'>
+            <h2 className='cart-title'>Cart</h2>
             <div>
                 {
                     cartProducts?.map(product => (
@@ -48,7 +49,7 @@ const Cart = () => {
                     ))
                 }
             </div>
-            <footer>
+            <footer className='cart-footer'>
                 <span>Total: </span>
                 <p>
                     {
@@ -60,8 +61,8 @@ const Cart = () => {
                             0
                     }
                 </p>
-                <button onClick={handleCheckout}>Checkout</button>
             </footer>
+            <button className='checkout-btn' onClick={handleCheckout}>Checkout</button>
         </section>
     );
 };
