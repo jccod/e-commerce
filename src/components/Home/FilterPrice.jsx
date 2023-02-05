@@ -33,7 +33,7 @@ const FilterPrice = ({setInputPrice}) => {
 
     return (
         <section className='filter-price'>
-            <h4 className='filter-title'>Price</h4>
+            <h4 className='filter-title'>Filter by Price</h4>
             <form onSubmit={handleSubmit}>
                 <div className='input-container'>
                     <label htmlFor="from">From</label>
