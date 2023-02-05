@@ -26,7 +26,6 @@
     color: red;
     font-size: 2rem;
     font-weight: 700;
-    
     width: 700px;
 }
 
@@ -62,6 +61,7 @@
 }
 
 .main-container {
+    width: 100%;
     display: flex;
     padding: 0 1.5rem;
 }
